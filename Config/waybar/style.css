@@ -1,0 +1,70 @@
+* {
+	font-size: 20px;
+	font-family: monospace;
+}
+
+window#waybar {
+	background: #292b2e;
+	color: #fdf6e3;
+	padding: 1em;
+}
+
+
+#temperature, 
+#workspaces,
+#clock,
+#pulseaudio,
+#pulseaudio-slider,
+#memory,
+#cpu,
+#battery,
+#disk,
+#tray {
+	padding: 0.5em 1em;
+}
+
+#pulseaudio-slider slider{
+	min-height: 1em;
+	min-width: 1em;
+}
+
+
+#pulseaudio-slider{
+	min-height: 1em;
+	min-width: 3em;
+}
+#pulseaudio-slider trough{
+	min-height: 1em;
+	border-radius: 1em;
+}
+#pulseaudio-slider highlight{
+	border-radius: 1em;
+	background-color: #268bd2;
+}
+
+
+#workspaces button {
+	padding-right: 0.5em;
+	color: #fdf6e3;
+}
+#workspaces button.focused {
+	color: #268bd2;
+}
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+#workspaces button:hover {
+	background: #1a1a1a;
+	border: #1a1a1a;
+}
+
+#taskbar {
+}
+
+
+#taskbar button {
+	padding: 1em;
+	color: white;
+	min-width: 100px;
+}
