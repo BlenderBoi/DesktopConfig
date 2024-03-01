@@ -1,27 +1,91 @@
 * {
-	font-size: 20px;
+	font-size: 14px;
 	font-family: monospace;
 }
 
 window#waybar {
-	background: #292b2e;
-	color: #fdf6e3;
-	padding: 1em;
+	background: #24273a;
+	color: #cad3f5;
 }
 
+#window{
+	margin-left: 2em;
+	color: #a6d189;
+	font-weight: bold;
+}
 
-#temperature, 
-#workspaces,
-#clock,
-#pulseaudio,
-#pulseaudio-slider,
+#clock.1,
+#clock.2,
+#clock.3{
+	padding: 0.5em 1em;
+	background-color: #181926;
+}
+
 #memory,
 #cpu,
-#battery,
 #disk,
-#tray {
-	padding: 0.5em 1em;
+#temperature{
+	color: #cad3f5;
+	background-color: #181926;
+	padding: 0 1.5em;
+	margin: 0 0;
 }
+
+#battery{
+	margin-left: 1em;
+}
+
+#temperature{
+	color: #a6da95;
+}
+#temperature.critical{
+	color: #ed8796;
+}
+
+
+#pulseaudio,
+#pulseaudio-slider,
+#battery,
+#tray {
+	background-color: #181926;
+	padding: 0 1em;
+	color: #cad3f5;
+}
+
+#workspaces{
+
+	background-color: #181926;
+	padding: 0 1em;
+	margin-right: 1em;
+}
+
+#workspaces button{
+
+	background-color: #24273a;
+	margin: 1em 0.5em;
+	color: #cad3f5;
+
+}
+#workspaces button.active{
+	background-color: #a6da95;
+	color: #181926;
+}
+
+#workspaces button:hover {
+	background: #6e738d;
+	border-color: rgba(0,0,0,0);
+	box-shadow: none;
+	text-shadow: none;
+}
+
+#workspaces button.active:hover {
+	background: #eed49f;
+	border-color: rgba(0,0,0,0);
+	box-shadow: none;
+	text-shadow: none;
+}
+
+
 
 #pulseaudio-slider slider{
 	min-height: 1em;
@@ -43,28 +107,49 @@ window#waybar {
 }
 
 
-#workspaces button {
-	padding-right: 0.5em;
-	color: #fdf6e3;
-}
-#workspaces button.focused {
-	color: #268bd2;
-}
-#workspaces button:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
-}
-#workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
-}
 
 #taskbar {
+	background-color: #1e2030;
 }
 
 
 #taskbar button {
+	color: #cad3f5;
 	padding: 1em;
-	color: white;
-	min-width: 100px;
+	min-width: 18em;
+	background-color: #363a4f;
+	margin: 0.1em;
 }
+
+#taskbar button.active {
+	background-color: #494d64;
+	color: #cad3f5;
+}
+
+#taskbar button:hover {
+	background: #6e738d;
+	border-color: rgba(0,0,0,0);
+	box-shadow: none;
+	text-shadow: none;
+}
+
+#taskbar button.active:hover {
+	background: #8087a2;
+	border-color: rgba(0,0,0,0);
+	box-shadow: none;
+	text-shadow: none;
+}
+#cpu {
+	color: #f5a97f;
+
+}
+#memory {
+	color: #ee99a0;
+
+}
+
+#disk {
+	color: #8aadf4;
+
+}
+

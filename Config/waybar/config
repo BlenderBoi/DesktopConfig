@@ -7,19 +7,40 @@
 
 	"modules-left": [
 		"hyprland/workspaces",
+		"clock#3",
+		"clock#2",
+		"clock#1",
+		"hyprland/window"
 	],
 	"modules-center": [
-		"clock",
 	],
 	"modules-right": [
-		"pulseaudio/slider",
+		"disk",
 		"temperature",
 		"memory",
 		"cpu",
 		"battery",
-		"disk",
-		"tray"
+		"pulseaudio",
+		"tray",
 	],
+
+	"wlr/taskbar": {
+	    "format": "{icon} {title:.30}",
+	    "icon-size": 24,
+	    "icon-theme": "Numix-Circle",
+	    "tooltip-format": "{title}",
+	    "on-click": "activate",
+	    "on-click-middle": "close",
+	    "app_ids-mapping": {
+	      "firefoxdeveloperedition": "firefox-developer-edition"
+	    },
+	    "rewrite": {
+		"Firefox Web Browser": "Firefox",
+		"Foot Server": "Terminal"
+	    }
+	},
+
+
 	"pulseaudio/slider":{
 	"min": 0,
 	"max": 100,
@@ -27,15 +48,29 @@
 	},
 
 
+	"hyprland/window": {
+		"format": "{title}"
+	},
+
 
 
 	"hyprland/workspaces": {
-		"disable-scroll": true,
-		"format": "{name}"
+		"format": "{name}",
+		"persistent-workspaces":{
+		"*": 3
+		},
 	},
 
-	"clock": {
-		"format": "{:%B %D:%A%H:%M}",
+	"clock#1": {
+		"format": "{:%d %B %Y}",
+		"tooltip": false,
+	},
+	"clock#2": {
+		"format": "{:%R %p}",
+		"tooltip": false,
+	},
+	"clock#3": {
+		"format": "{:%A}",
 		"tooltip": false,
 	},
 
@@ -56,11 +91,11 @@
 	},
 	"memory": {
 		"interval": 5,
-		"format": "Mem {}%"
+		"format": "RAM {}%"
 	},
 	"cpu": {
 		"interval": 5,
-		"format": "CPU {usage:2}%"
+		"format": "CPU: {usage:2}%"
 	},
 	"battery": {
 		"states": {
@@ -79,13 +114,15 @@
 	},
 	"disk": {
 		"interval": 5,
-		"format": "Disk {percentage_used:2}%",
+		"format": "Disk: {percentage_used}%",
 		"path": "/"
 	},
 	"tray": {
-		"icon-size": 20
+		"icon-size": 20,
+		"show-passive-items": true,
 	},
 	"temperature": {
+		"format": "Temp: {temperatureC}°C",
 	}
 },
 
@@ -94,23 +131,28 @@
 	"position": "bottom",
 
 	"modules-left": [
+		"wlr/taskbar",
 	],
 	"modules-center": [
 	],
-	"modules-left": [
-		"wlr/taskbar",
+	"modules-right": [
 	],
 
+	"clock#1": {
+		"format": "{:%d %B %Y %A}",
+		"tooltip": false,
+	},
+	"clock#2": {
+		"format": "{:%R %p}",
+		"tooltip": false,
+	},
 	"wlr/taskbar": {
-	    "format": "{icon} {title}",
+	    "format": "{icon} {title:.30}",
 	    "icon-size": 24,
 	    "icon-theme": "Numix-Circle",
 	    "tooltip-format": "{title}",
 	    "on-click": "activate",
 	    "on-click-middle": "close",
-	    "ignore-list": [
-	       "Alacritty"
-	    ],
 	    "app_ids-mapping": {
 	      "firefoxdeveloperedition": "firefox-developer-edition"
 	    },
